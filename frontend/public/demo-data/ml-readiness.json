@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Customer Features",
+    "description": "Behavioural features for recommendation, propensity and customer modelling.",
+    "entity": "user_id",
+    "rows": 1747,
+    "features": [
+      "sessions",
+      "views",
+      "cart_events",
+      "purchases",
+      "total_spend",
+      "average_order_value",
+      "last_activity"
+    ],
+    "checks": [
+      {
+        "label": "Unique entity key",
+        "status": "passed"
+      },
+      {
+        "label": "Feature timestamp available",
+        "status": "passed"
+      },
+      {
+        "label": "Model-ready numeric features",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "name": "Product Features",
+    "description": "Product engagement and conversion features.",
+    "entity": "product_id",
+    "rows": 2305,
+    "features": [
+      "views",
+      "cart_events",
+      "purchases",
+      "revenue",
+      "unique_users",
+      "conversion_rate"
+    ],
+    "checks": [
+      {
+        "label": "Product identifiers available",
+        "status": "passed"
+      },
+      {
+        "label": "Non-negative aggregates",
+        "status": "passed"
+      },
+      {
+        "label": "Conversion features generated",
+        "status": "passed"
+      }
+    ]
+  }
+]

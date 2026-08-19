@@ -1,0 +1,3 @@
+import { Cloud, Database, Layers3, MonitorCog, ServerCog } from "lucide-react";
+const items=[["Sources","Kaggle ecommerce events",Database],["Data lake","Bronze · Silver · Gold Parquet",Layers3],["Processing","Python · Spark · Databricks",ServerCog],["Warehouse","Snowflake analytics layer",Cloud],["Observability","Validation · metrics · quarantine",MonitorCog]] as const;
+export function ArchitectureDiagram(){return <div className="architecture-diagram">{items.map(([title,text,Icon],i)=><div className="architecture-row" key={title}><div><Icon/><div><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></div></div>{i<items.length-1&&<div className="connector"/>}</div>)}</div>}

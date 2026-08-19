@@ -1,0 +1,3 @@
+import { Line, LineChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import type { DailyMetric } from "../types/pipeline";
+export function ConversionChart({data}:{data:DailyMetric[]}) {return <ResponsiveContainer width="100%" height={300}><LineChart data={data}><CartesianGrid strokeDasharray="3 3"/><XAxis dataKey="date"/><YAxis/><Tooltip/><Line type="monotone" dataKey="conversionRate" stroke="currentColor" strokeWidth={2}/></LineChart></ResponsiveContainer>}

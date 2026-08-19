@@ -1,0 +1,1002 @@
+[
+  {
+    "productId": 1005135,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 22,
+    "carts": 5,
+    "purchases": 1,
+    "revenue": 1747.79,
+    "conversionRate": 4.5455
+  },
+  {
+    "productId": 1004246,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 23,
+    "carts": 0,
+    "purchases": 2,
+    "revenue": 1472.36,
+    "conversionRate": 8.6957
+  },
+  {
+    "productId": 1002524,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 21,
+    "carts": 1,
+    "purchases": 2,
+    "revenue": 1031.34,
+    "conversionRate": 9.5238
+  },
+  {
+    "productId": 1005104,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 11,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 975.57,
+    "conversionRate": 9.0909
+  },
+  {
+    "productId": 1003316,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 7,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 946.97,
+    "conversionRate": 14.2857
+  },
+  {
+    "productId": 1004659,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 18,
+    "carts": 2,
+    "purchases": 1,
+    "revenue": 787.18,
+    "conversionRate": 5.5556
+  },
+  {
+    "productId": 1004249,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 23,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 739.81,
+    "conversionRate": 4.3478
+  },
+  {
+    "productId": 1002532,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 642.69,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 1004650,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 628.78,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 1004856,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 75,
+    "carts": 4,
+    "purchases": 4,
+    "revenue": 523.04,
+    "conversionRate": 5.3333
+  },
+  {
+    "productId": 1004932,
+    "brand": "vivo",
+    "category": "electronics.smartphone",
+    "views": 8,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 463.31,
+    "conversionRate": 12.5
+  },
+  {
+    "productId": 1004750,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 20,
+    "carts": 2,
+    "purchases": 2,
+    "revenue": 394.86,
+    "conversionRate": 10.0
+  },
+  {
+    "productId": 13103842,
+    "brand": "pdw",
+    "category": "Uncategorised",
+    "views": 1,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 391.26,
+    "conversionRate": 100.0
+  },
+  {
+    "productId": 4804055,
+    "brand": "apple",
+    "category": "electronics.audio.headphone",
+    "views": 13,
+    "carts": 0,
+    "purchases": 2,
+    "revenue": 379.82,
+    "conversionRate": 15.3846
+  },
+  {
+    "productId": 1002634,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 6,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 377.03,
+    "conversionRate": 16.6667
+  },
+  {
+    "productId": 1307135,
+    "brand": "hp",
+    "category": "computers.notebook",
+    "views": 5,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 320.35,
+    "conversionRate": 20.0
+  },
+  {
+    "productId": 1004870,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 37,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 286.86,
+    "conversionRate": 2.7027
+  },
+  {
+    "productId": 1004767,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 76,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 254.82,
+    "conversionRate": 1.3158
+  },
+  {
+    "productId": 1004741,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 14,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 185.71,
+    "conversionRate": 7.1429
+  },
+  {
+    "productId": 1004566,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 6,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 177.2,
+    "conversionRate": 16.6667
+  },
+  {
+    "productId": 1004833,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 27,
+    "carts": 6,
+    "purchases": 1,
+    "revenue": 174.76,
+    "conversionRate": 3.7037
+  },
+  {
+    "productId": 4802036,
+    "brand": "apple",
+    "category": "electronics.audio.headphone",
+    "views": 7,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 171.56,
+    "conversionRate": 14.2857
+  },
+  {
+    "productId": 4804056,
+    "brand": "apple",
+    "category": "electronics.audio.headphone",
+    "views": 16,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 161.98,
+    "conversionRate": 6.25
+  },
+  {
+    "productId": 28100119,
+    "brand": "Unknown",
+    "category": "Uncategorised",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 153.16,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 5100719,
+    "brand": "samsung",
+    "category": "electronics.clocks",
+    "views": 5,
+    "carts": 1,
+    "purchases": 1,
+    "revenue": 151.61,
+    "conversionRate": 20.0
+  },
+  {
+    "productId": 4700419,
+    "brand": "sho-me",
+    "category": "auto.accessories.videoregister",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 141.86,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 19100075,
+    "brand": "Unknown",
+    "category": "construction.tools.saw",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 120.47,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 1500021,
+    "brand": "epson",
+    "category": "computers.peripherals.printer",
+    "views": 4,
+    "carts": 3,
+    "purchases": 1,
+    "revenue": 116.73,
+    "conversionRate": 25.0
+  },
+  {
+    "productId": 1004903,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 7,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 111.82,
+    "conversionRate": 14.2857
+  },
+  {
+    "productId": 32701106,
+    "brand": "shimano",
+    "category": "Uncategorised",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 95.21,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 26601440,
+    "brand": "Unknown",
+    "category": "Uncategorised",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 91.12,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 6800659,
+    "brand": "kingston",
+    "category": "computers.components.hdd",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 66.67,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 16500007,
+    "brand": "omron",
+    "category": "Uncategorised",
+    "views": 7,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 62.52,
+    "conversionRate": 14.2857
+  },
+  {
+    "productId": 28100000,
+    "brand": "Unknown",
+    "category": "Uncategorised",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 60.49,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 5100816,
+    "brand": "xiaomi",
+    "category": "Uncategorised",
+    "views": 30,
+    "carts": 2,
+    "purchases": 2,
+    "revenue": 59.02,
+    "conversionRate": 6.6667
+  },
+  {
+    "productId": 13800054,
+    "brand": "santeri",
+    "category": "furniture.bathroom.toilet",
+    "views": 1,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 54.42,
+    "conversionRate": 100.0
+  },
+  {
+    "productId": 12703015,
+    "brand": "cordiant",
+    "category": "Uncategorised",
+    "views": 17,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 42.99,
+    "conversionRate": 5.8824
+  },
+  {
+    "productId": 31500231,
+    "brand": "luminarc",
+    "category": "Uncategorised",
+    "views": 4,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 39.64,
+    "conversionRate": 25.0
+  },
+  {
+    "productId": 15900073,
+    "brand": "tefal",
+    "category": "Uncategorised",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 38.59,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 44000003,
+    "brand": "ersport",
+    "category": "apparel.shoes",
+    "views": 3,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 35.78,
+    "conversionRate": 33.3333
+  },
+  {
+    "productId": 34800175,
+    "brand": "Unknown",
+    "category": "Uncategorised",
+    "views": 5,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 33.46,
+    "conversionRate": 20.0
+  },
+  {
+    "productId": 6200687,
+    "brand": "oasis",
+    "category": "appliances.environment.air_heater",
+    "views": 5,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 28.03,
+    "conversionRate": 20.0
+  },
+  {
+    "productId": 4804295,
+    "brand": "xiaomi",
+    "category": "electronics.audio.headphone",
+    "views": 22,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 23.13,
+    "conversionRate": 4.5455
+  },
+  {
+    "productId": 4802157,
+    "brand": "jbl",
+    "category": "electronics.audio.headphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 20.57,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 4804501,
+    "brand": "ritmix",
+    "category": "electronics.audio.headphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 3.37,
+    "conversionRate": 100.0
+  },
+  {
+    "productId": 4804536,
+    "brand": "ritmix",
+    "category": "electronics.audio.headphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 1,
+    "revenue": 0.88,
+    "conversionRate": 50.0
+  },
+  {
+    "productId": 45600238,
+    "brand": "shagovita",
+    "category": "apparel.shoes",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003141,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003304,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 6,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003305,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003306,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 19,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003307,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003309,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003310,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003311,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003312,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003313,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003315,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003317,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 13,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003319,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 3,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003328,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003363,
+    "brand": "apple",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003416,
+    "brand": "meizu",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003428,
+    "brand": "meizu",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003441,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003499,
+    "brand": "oneplus",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003535,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003549,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 5,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003636,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003707,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003709,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 3,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003712,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003714,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003746,
+    "brand": "sony",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003756,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 8,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003768,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003769,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 6,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003770,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003774,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 4,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003798,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 3,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003852,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 4,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003860,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003862,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003879,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003894,
+    "brand": "lg",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003934,
+    "brand": "lg",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003938,
+    "brand": "meizu",
+    "category": "electronics.smartphone",
+    "views": 3,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003942,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003954,
+    "brand": "oneplus",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003965,
+    "brand": "samsung",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003982,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003983,
+    "brand": "huawei",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003991,
+    "brand": "lg",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1003992,
+    "brand": "lg",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004014,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004034,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004035,
+    "brand": "nokia",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004038,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 1,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004059,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 2,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  },
+  {
+    "productId": 1004133,
+    "brand": "xiaomi",
+    "category": "electronics.smartphone",
+    "views": 6,
+    "carts": 0,
+    "purchases": 0,
+    "revenue": 0.0,
+    "conversionRate": 0.0
+  }
+]

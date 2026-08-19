@@ -1,0 +1,44 @@
+[
+  {
+    "check": "Required columns",
+    "column": "dataset",
+    "status": "passed",
+    "affectedRows": 0,
+    "description": "All required ecommerce fields are present."
+  },
+  {
+    "check": "Duplicate events",
+    "column": "composite key",
+    "status": "warning",
+    "affectedRows": 3,
+    "description": "Duplicate ecommerce events are quarantined."
+  },
+  {
+    "check": "Valid timestamp",
+    "column": "event_time",
+    "status": "passed",
+    "affectedRows": 0,
+    "description": "Event timestamps must parse as UTC dates."
+  },
+  {
+    "check": "Positive price",
+    "column": "price",
+    "status": "passed",
+    "affectedRows": 0,
+    "description": "Price values must be numeric and non-negative."
+  },
+  {
+    "check": "Known event type",
+    "column": "event_type",
+    "status": "passed",
+    "affectedRows": 0,
+    "description": "Only supported ecommerce event types are accepted."
+  },
+  {
+    "check": "Silver retention",
+    "column": "dataset",
+    "status": "passed",
+    "affectedRows": 3,
+    "description": "4,997 trusted records remained after validation."
+  }
+]

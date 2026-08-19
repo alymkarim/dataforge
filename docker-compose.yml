@@ -1,0 +1,7 @@
+services:
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./configs:/app/configs:ro
+    command: sh -c "python scripts/generate_sample_data.py --rows 5000 && ai-data-pipeline"

@@ -1,0 +1,52 @@
+# =========================
+# Python
+# =========================
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+*.egg-info/
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.local
+.env.*
+!.env.example
+
+# =========================
+# Frontend / Node
+# =========================
+frontend/node_modules/
+frontend/dist/
+
+# =========================
+# Data pipeline outputs
+# =========================
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+data/quarantine/
+data/pipeline_metrics.jsonl
+
+# =========================
+# Dataset / archive files
+# =========================
+*.csv
+*.csv.zip
+*.parquet
+*.zip
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,3 @@
+export function FilterBar({query,setQuery,event,setEvent}:{query:string;setQuery:(v:string)=>void;event:string;setEvent:(v:string)=>void}) {
+ return <div className="filter-bar"><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search product, brand, category or user…"/><select value={event} onChange={e=>setEvent(e.target.value)}><option value="">All events</option><option value="view">View</option><option value="cart">Cart</option><option value="purchase">Purchase</option></select></div>;
+}

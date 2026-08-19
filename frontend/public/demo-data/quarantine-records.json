@@ -1,0 +1,38 @@
+[
+  {
+    "id": "q-0001",
+    "reason": "Duplicate Event",
+    "event_time": "2019-10-01 02:25:40+00:00",
+    "event_type": "view",
+    "product_id": 1307116,
+    "price": 463.07,
+    "user_id": 548049635,
+    "details": [
+      "Duplicate Event"
+    ]
+  },
+  {
+    "id": "q-0002",
+    "reason": "Duplicate Event",
+    "event_time": "2019-10-01 02:25:40+00:00",
+    "event_type": "view",
+    "product_id": 1307116,
+    "price": 463.07,
+    "user_id": 548049635,
+    "details": [
+      "Duplicate Event"
+    ]
+  },
+  {
+    "id": "q-0003",
+    "reason": "Duplicate Event",
+    "event_time": "2019-10-01 02:25:40+00:00",
+    "event_type": "view",
+    "product_id": 1307116,
+    "price": 463.07,
+    "user_id": 548049635,
+    "details": [
+      "Duplicate Event"
+    ]
+  }
+]

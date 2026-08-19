@@ -1,0 +1,3 @@
+import type { QualityCheck } from "../types/pipeline";
+import { StatusBadge } from "./StatusBadge";
+export function QualityTable({rows}:{rows:QualityCheck[]}) { return <div className="table-wrap"><table><thead><tr><th>Check</th><th>Column</th><th>Status</th><th>Affected</th><th>Description</th></tr></thead><tbody>{rows.map(r=><tr key={r.check}><td>{r.check}</td><td>{r.column}</td><td><StatusBadge status={r.status}/></td><td>{r.affectedRows}</td><td>{r.description}</td></tr>)}</tbody></table></div>; }

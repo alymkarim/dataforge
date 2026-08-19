@@ -1,0 +1,1 @@
+export function LoadingState(){return <div className="state-card"><div className="spinner"/><p>Loading pipeline data…</p></div>}

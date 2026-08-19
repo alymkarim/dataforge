@@ -1,0 +1,3 @@
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import type { DailyMetric } from "../types/pipeline";
+export function EventChart({data}:{data:DailyMetric[]}) {return <ResponsiveContainer width="100%" height={300}><BarChart data={data}><CartesianGrid strokeDasharray="3 3"/><XAxis dataKey="date"/><YAxis/><Tooltip/><Bar dataKey="views" fill="currentColor" opacity={0.75}/><Bar dataKey="purchases" fill="currentColor" opacity={0.35}/></BarChart></ResponsiveContainer>}

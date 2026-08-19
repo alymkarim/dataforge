@@ -1,0 +1,67 @@
+{
+  "name": "eCommerce Behavior Data from Multi-Category Store",
+  "source": "Kaggle",
+  "sourceType": "Public dataset",
+  "records": 5000,
+  "period": "October 2019 sample",
+  "format": "CSV \u2192 Parquet",
+  "estimatedSize": "5,000 processed rows",
+  "columns": 9,
+  "description": "High-volume ecommerce behaviour events used to simulate a production data-engineering pipeline.",
+  "schema": [
+    {
+      "name": "event_time",
+      "type": "str",
+      "nullable": false,
+      "description": "UTC event occurrence time"
+    },
+    {
+      "name": "event_type",
+      "type": "str",
+      "nullable": false,
+      "description": "view, cart, remove_from_cart or purchase"
+    },
+    {
+      "name": "product_id",
+      "type": "int64",
+      "nullable": false,
+      "description": "Product identifier"
+    },
+    {
+      "name": "category_id",
+      "type": "int64",
+      "nullable": false,
+      "description": "Hierarchical category identifier"
+    },
+    {
+      "name": "category_code",
+      "type": "str",
+      "nullable": true,
+      "description": "Readable product category path"
+    },
+    {
+      "name": "brand",
+      "type": "str",
+      "nullable": true,
+      "description": "Product brand"
+    },
+    {
+      "name": "price",
+      "type": "float64",
+      "nullable": false,
+      "description": "Product/event price"
+    },
+    {
+      "name": "user_id",
+      "type": "int64",
+      "nullable": false,
+      "description": "Anonymous customer identifier"
+    },
+    {
+      "name": "user_session",
+      "type": "str",
+      "nullable": false,
+      "description": "Customer session identifier"
+    }
+  ]
+}

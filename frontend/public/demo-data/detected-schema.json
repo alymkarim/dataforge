@@ -1,0 +1,50 @@
+[
+  {
+    "name": "event_time",
+    "type": "timestamp",
+    "missingPercent": 0.0,
+    "sample": "2026-08-18 09:14:22"
+  },
+  {
+    "name": "event_type",
+    "type": "string",
+    "missingPercent": 0.0,
+    "sample": "purchase"
+  },
+  {
+    "name": "product_id",
+    "type": "integer",
+    "missingPercent": 0.0,
+    "sample": "1004856"
+  },
+  {
+    "name": "category_code",
+    "type": "string",
+    "missingPercent": 6.2,
+    "sample": "electronics.smartphone"
+  },
+  {
+    "name": "brand",
+    "type": "string",
+    "missingPercent": 4.8,
+    "sample": "samsung"
+  },
+  {
+    "name": "price",
+    "type": "decimal",
+    "missingPercent": 0.1,
+    "sample": "649.99"
+  },
+  {
+    "name": "user_id",
+    "type": "integer",
+    "missingPercent": 0.0,
+    "sample": "515982211"
+  },
+  {
+    "name": "user_session",
+    "type": "string",
+    "missingPercent": 0.4,
+    "sample": "a1d7..."
+  }
+]

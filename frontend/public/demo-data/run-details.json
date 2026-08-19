@@ -1,0 +1,71 @@
+{
+  "id": "aip-2e089ca248",
+  "startedAt": "2026-08-19T17:21:50.033725+00:00",
+  "finishedAt": "2026-08-19T17:21:50.189097+00:00",
+  "durationSeconds": 0.151,
+  "rowsPerSecond": 33023,
+  "rejectedRows": 3,
+  "status": "Completed",
+  "stages": [
+    {
+      "name": "Ingestion",
+      "durationSeconds": 0.039,
+      "status": "Completed",
+      "inputRows": 5000,
+      "outputRows": 5000,
+      "rejectedRows": 0,
+      "startedAt": "2026-08-19T17:21:50.033725+00:00",
+      "finishedAt": "2026-08-19T17:21:50.072235+00:00"
+    },
+    {
+      "name": "Validation",
+      "durationSeconds": 0.024,
+      "status": "Completed",
+      "inputRows": 5000,
+      "outputRows": 4997,
+      "rejectedRows": 3,
+      "startedAt": "2026-08-19T17:21:50.073201+00:00",
+      "finishedAt": "2026-08-19T17:21:50.096505+00:00"
+    },
+    {
+      "name": "Silver Transform",
+      "durationSeconds": 0.028,
+      "status": "Completed",
+      "inputRows": 4997,
+      "outputRows": 4997,
+      "rejectedRows": 0,
+      "startedAt": "2026-08-19T17:21:50.097507+00:00",
+      "finishedAt": "2026-08-19T17:21:50.125516+00:00"
+    },
+    {
+      "name": "Gold Daily",
+      "durationSeconds": 0.017,
+      "status": "Completed",
+      "inputRows": 4997,
+      "outputRows": 1,
+      "rejectedRows": 0,
+      "startedAt": "2026-08-19T17:21:50.125516+00:00",
+      "finishedAt": "2026-08-19T17:21:50.143554+00:00"
+    },
+    {
+      "name": "Gold Products",
+      "durationSeconds": 0.026,
+      "status": "Completed",
+      "inputRows": 4997,
+      "outputRows": 2305,
+      "rejectedRows": 0,
+      "startedAt": "2026-08-19T17:21:50.143554+00:00",
+      "finishedAt": "2026-08-19T17:21:50.170073+00:00"
+    },
+    {
+      "name": "Gold Customers",
+      "durationSeconds": 0.018,
+      "status": "Completed",
+      "inputRows": 4997,
+      "outputRows": 1747,
+      "rejectedRows": 0,
+      "startedAt": "2026-08-19T17:21:50.170073+00:00",
+      "finishedAt": "2026-08-19T17:21:50.189097+00:00"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "raw",
+    "label": "Kaggle ecommerce CSV",
+    "layer": "Source",
+    "path": "data/raw/ecommerce/sample-multiday.csv",
+    "rows": 5000,
+    "description": "External ecommerce behaviour source.",
+    "transformations": []
+  },
+  {
+    "id": "bronze",
+    "label": "Bronze events",
+    "layer": "Bronze",
+    "path": "data/bronze/ecommerce/events.parquet",
+    "rows": 5000,
+    "description": "Immutable source-preserving Parquet layer.",
+    "transformations": [
+      "CSV ingestion",
+      "Parquet conversion",
+      "Source schema verification"
+    ]
+  },
+  {
+    "id": "silver",
+    "label": "Silver events",
+    "layer": "Silver",
+    "path": "data/silver/ecommerce/events_clean.parquet",
+    "rows": 4997,
+    "description": "Validated and normalized event dataset.",
+    "transformations": [
+      "Duplicate removal",
+      "Timestamp parsing",
+      "Event type validation",
+      "Price validation",
+      "String normalization"
+    ]
+  },
+  {
+    "id": "gold",
+    "label": "Gold analytics and features",
+    "layer": "Gold",
+    "path": "data/gold/ecommerce/",
+    "rows": 4053,
+    "description": "Analytics and ML-ready outputs.",
+    "transformations": [
+      "Daily KPI aggregation",
+      "Product metrics",
+      "Customer features"
+    ]
+  }
+]

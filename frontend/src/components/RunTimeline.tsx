@@ -1,0 +1,3 @@
+import type { PipelineRun } from "../types/pipeline";
+import { StatusBadge } from "./StatusBadge";
+export function RunTimeline({runs}:{runs:PipelineRun[]}) {return <div className="timeline">{runs.map(r=><article key={r.id}><span className="timeline-dot"/><div><strong>{r.id}</strong><span>{r.startedAt}</span></div><span>{r.duration}</span><span>{r.rows.toLocaleString()} rows</span><StatusBadge status={r.status}/></article>)}</div>}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "aip-2e089ca248",
+    "startedAt": "2026-08-19T17:21:50.033725+00:00",
+    "finishedAt": "2026-08-19T17:21:50.189097+00:00",
+    "duration": "0.15s",
+    "rows": 5000,
+    "rejectedRows": 3,
+    "status": "Completed",
+    "warning": true
+  },
+  {
+    "id": "aip-03ed2c7153",
+    "startedAt": "Unknown",
+    "finishedAt": "Unknown",
+    "duration": "0.20s",
+    "rows": 5000,
+    "rejectedRows": 3,
+    "status": "Completed",
+    "warning": true
+  },
+  {
+    "id": "aip-b0c550f21b",
+    "startedAt": "Unknown",
+    "finishedAt": "Unknown",
+    "duration": "0.13s",
+    "rows": 5000,
+    "rejectedRows": 3,
+    "status": "Completed",
+    "warning": true
+  },
+  {
+    "id": "aip-5d4cd8279e",
+    "startedAt": "Unknown",
+    "finishedAt": "Unknown",
+    "duration": "0.14s",
+    "rows": 5000,
+    "rejectedRows": 3,
+    "status": "Completed",
+    "warning": true
+  },
+  {
+    "id": "aip-bbd3d24d53",
+    "startedAt": "Unknown",
+    "finishedAt": "Unknown",
+    "duration": "1.29s",
+    "rows": 100000,
+    "rejectedRows": 17,
+    "status": "Completed",
+    "warning": true
+  }
+]

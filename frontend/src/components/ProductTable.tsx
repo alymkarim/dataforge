@@ -1,0 +1,3 @@
+import type { ProductMetric } from "../types/pipeline";
+import { money, percent } from "../utils/format";
+export function ProductTable({rows}:{rows:ProductMetric[]}) {return <div className="table-wrap"><table><thead><tr><th>Product</th><th>Brand</th><th>Category</th><th>Views</th><th>Purchases</th><th>Revenue</th><th>Conversion</th></tr></thead><tbody>{rows.map(r=><tr key={r.productId}><td>{r.productId}</td><td>{r.brand}</td><td>{r.category}</td><td>{r.views.toLocaleString()}</td><td>{r.purchases.toLocaleString()}</td><td>{money(r.revenue)}</td><td>{percent(r.conversionRate)}</td></tr>)}</tbody></table></div>}

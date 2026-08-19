@@ -1,0 +1,78 @@
+project:
+  name: ai-data-platform
+  environment: local
+  run_id_prefix: aip
+
+dataset:
+  id: ecommerce
+  name: Ecommerce Behaviour Events
+  source: Kaggle
+  domain: Retail
+
+paths:
+  raw: data/raw/ecommerce/sample-multiday.csv
+
+  bronze: data/bronze/ecommerce/events.parquet
+
+  silver: data/silver/ecommerce/events_clean.parquet
+
+  gold_daily: data/gold/ecommerce/daily_metrics.parquet
+
+  gold_products: data/gold/ecommerce/product_metrics.parquet
+
+  gold_customers: data/gold/ecommerce/customer_features.parquet
+
+  metrics: data/pipeline_metrics.jsonl
+
+  quarantine: data/quarantine/ecommerce
+
+pipeline:
+  engine: pandas
+  timestamp_column: event_time
+  chunk_size: 100000
+  partitions: 4
+
+quality:
+  max_null_rate: 0.10
+  min_rows: 1
+
+  required_columns:
+    - event_time
+    - event_type
+    - product_id
+    - category_id
+    - category_code
+    - brand
+    - price
+    - user_id
+    - user_session
+
+  allowed_event_types:
+    - view
+    - cart
+    - remove_from_cart
+    - purchase
+
+  positive_columns:
+    - price
+
+  nullable_columns:
+    - category_code
+    - brand
+    - user_session
+
+gold:
+  daily_metrics: true
+  product_metrics: true
+  customer_features: true
+
+snowflake:
+  enabled: false
+
+  database: AI_ANALYTICS
+  schema: FEATURES
+  warehouse: COMPUTE_WH
+
+  daily_table: ECOMMERCE_DAILY_METRICS
+  product_table: ECOMMERCE_PRODUCT_METRICS
+  customer_table: ECOMMERCE_CUSTOMER_FEATURES

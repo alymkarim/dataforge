@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ecommerce",
+    "name": "Ecommerce Behaviour Events",
+    "domain": "Retail",
+    "filename": "sample-multiday.csv",
+    "format": "CSV",
+    "rows": 5000,
+    "columns": 9,
+    "size": "Multi-day development sample",
+    "status": "Ready",
+    "lastProcessed": "Latest run",
+    "description": "Real Kaggle ecommerce behaviour dataset processed through the data platform.",
+    "supportsGold": true,
+    "supportsML": true
+  }
+]
