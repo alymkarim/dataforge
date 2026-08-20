@@ -1,7 +1,16 @@
 services:
-  pipeline:
+  backend:
     build: .
+    container_name: dataforge-backend
+
+    ports:
+      - "8000:8000"
+
     volumes:
       - ./data:/app/data
-      - ./configs:/app/configs:ro
-    command: sh -c "python scripts/generate_sample_data.py --rows 5000 && ai-data-pipeline"
+      - ./configs:/app/configs
+
+    environment:
+      - PYTHONPATH=/app/src
+
+    restart: unless-stopped

@@ -1,8 +1,17 @@
 FROM python:3.11-slim
+
 WORKDIR /app
-COPY pyproject.toml README.md ./
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY pyproject.toml .
 COPY src ./src
 COPY configs ./configs
 COPY scripts ./scripts
-RUN pip install --no-cache-dir .
-CMD ["ai-data-pipeline", "--config", "configs/pipeline.yml"]
+
+ENV PYTHONPATH=/app/src
+
+EXPOSE 8000
+
+CMD ["uvicorn", "ai_data_platform.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
