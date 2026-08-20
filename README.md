@@ -77,34 +77,25 @@ Raw datasets are intentionally excluded from Git.
 ## Architecture
 
 ```mermaid
-flowchart TD
-    A[Kaggle Ecommerce Events] --> B[Ingestion]
-
+flowchart LR
+    A[Raw Data] --> B[Ingestion]
     B --> C[Bronze Layer]
+    C --> D[Data Validation]
 
-    C --> D{Data Validation}
-
-    D -->|Invalid| Q[Quarantine]
     D -->|Valid| E[Silver Layer]
+    D -->|Invalid| Q[Quarantine]
 
-    E --> F[Gold Transformations]
+    E --> F[Gold Layer]
 
     F --> G[Daily Metrics]
     F --> H[Product Metrics]
     F --> I[Customer Features]
 
-    C --> M[Pipeline Metrics]
-    D --> M
-    E --> M
-    F --> M
+    G --> J[FastAPI]
+    H --> J
+    I --> J
 
-    G --> API[FastAPI]
-    H --> API
-    I --> API
-    M --> API
-    Q --> API
-
-    API --> UI[React + TypeScript Dashboard]
+    J --> K[React + TypeScript Dashboard]
 ```
 
 ---
