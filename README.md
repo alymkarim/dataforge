@@ -1,88 +1,362 @@
-# Data Infrastructure for AI Systems
+# DataForge
 
-> An observable medallion data pipeline that ingests raw product events, validates data quality, transforms records into analytics-ready datasets, and publishes model-ready daily features.
+> A full-stack data engineering platform for ingesting, validating, transforming, monitoring, and exploring ecommerce event data through local and distributed Bronze → Silver → Gold pipelines.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-009688)
+![React](https://img.shields.io/badge/React-TypeScript-61DAFB)
 ![Pandas](https://img.shields.io/badge/Pandas-ETL-150458)
-![Spark](https://img.shields.io/badge/Apache%20Spark-Ready-E25A1C)
+![Spark](https://img.shields.io/badge/Apache%20Spark-PySpark-E25A1C)
 ![Databricks](https://img.shields.io/badge/Databricks-Delta%20Lake-FF3621)
-![Snowflake](https://img.shields.io/badge/Snowflake-Optional-29B5E8)
-![Azure](https://img.shields.io/badge/Azure-Cloud%20Ready-0078D4)
+![Delta Lake](https://img.shields.io/badge/Delta%20Lake-Medallion-00ADD8)
 ![Tests](https://img.shields.io/badge/Tests-pytest-success)
 
-## Project overview
+DataForge demonstrates the infrastructure behind reliable analytics and machine-learning systems, from raw ingestion and data-quality enforcement to analytics-ready datasets, feature generation, observability, and interactive exploration.
 
-AI systems fail when their data is late, duplicated, malformed or impossible to trace. This project demonstrates the data infrastructure behind reliable analytics and machine-learning workflows using a **Bronze → Silver → Gold** architecture.
+---
 
-The local implementation runs with Python and pandas, while the included Databricks notebook shows how the same pipeline boundaries translate to Spark and Delta Lake. A Snowflake loader is provided for publishing the final feature table.
+## Overview
 
-## What it does
+Modern AI and analytics systems depend on more than model performance. They require reliable data ingestion, validation, transformation, traceability, and monitoring.
 
-1. Generates or ingests event data from a CSV source.
-2. Writes an immutable Bronze representation in Parquet.
-3. Validates schema, primary keys, timestamps, null rates and accepted domains.
-4. Sends invalid records to a run-specific quarantine dataset.
-5. Cleans and standardises valid events into the Silver layer.
-6. Aggregates daily user behaviour into a Gold feature table.
-7. Emits structured JSON logs and stage-level pipeline metrics.
-8. Optionally loads the Gold dataset into Snowflake.
+DataForge implements these concerns using a medallion architecture:
+
+```text
+Raw Data
+   ↓
+Bronze
+   ↓
+Validation
+   ├── Invalid → Quarantine
+   ↓
+Silver
+   ↓
+Gold
+   ├── Daily Metrics
+   ├── Product Metrics
+   └── Customer Features
+```
+
+The project provides two processing paths:
+
+- **Local pipeline:** Python + Pandas + Parquet
+- **Distributed pipeline:** Databricks + PySpark + Delta Lake
+
+A FastAPI backend exposes dataset operations, while a React and TypeScript dashboard provides an interface for exploring datasets, pipeline runs, quality results, lineage, quarantine records, analytics, and ML readiness.
+
+---
+
+## Dataset
+
+DataForge uses the **Ecommerce Behavior Data from Multi-Category Store** dataset from Kaggle.
+
+Dataset:
+
+`mkechinov/ecommerce-behavior-data-from-multi-category-store`
+
+The source contains ecommerce interaction events including:
+
+| Column | Description |
+|---|---|
+| `event_time` | Timestamp of the interaction |
+| `event_type` | View, cart, remove-from-cart or purchase |
+| `product_id` | Product identifier |
+| `category_id` | Product category identifier |
+| `category_code` | Hierarchical product category |
+| `brand` | Product brand |
+| `price` | Product price |
+| `user_id` | Customer identifier |
+| `user_session` | Session identifier |
+
+The complete October 2019 source contains several gigabytes of event data. Smaller samples are used for local development and the portfolio demo to keep the project reproducible and lightweight.
+
+Raw datasets are intentionally excluded from Git.
+
+---
 
 ## Architecture
 
 ```mermaid
-flowchart LR
-    A[CSV / Azure Data Lake] --> B[Bronze Parquet]
-    B --> C{Validation}
-    C -->|Valid| D[Silver Clean Events]
-    C -->|Invalid| Q[Quarantine]
-    D --> E[Gold Daily Features]
-    E --> F[Snowflake]
-    B --> M[Logs & Metrics]
-    C --> M
+flowchart TD
+    A[Kaggle Ecommerce Events] --> B[Ingestion]
+
+    B --> C[Bronze Layer]
+
+    C --> D{Data Validation}
+
+    D -->|Invalid| Q[Quarantine]
+    D -->|Valid| E[Silver Layer]
+
+    E --> F[Gold Transformations]
+
+    F --> G[Daily Metrics]
+    F --> H[Product Metrics]
+    F --> I[Customer Features]
+
+    C --> M[Pipeline Metrics]
     D --> M
     E --> M
+    F --> M
+
+    G --> API[FastAPI]
+    H --> API
+    I --> API
+    M --> API
+    Q --> API
+
+    API --> UI[React + TypeScript Dashboard]
 ```
 
-## Gold feature table
+---
 
-| Column | Description |
-|---|---|
-| `event_date` | UTC calendar date |
-| `user_id` | User identifier |
-| `country` | Standardised country code |
-| `event_count` | Total daily events |
-| `purchase_count` | Daily purchases |
-| `click_count` | Daily clicks |
-| `total_value` | Daily transaction value |
-| `unique_devices` | Distinct devices used |
-| `last_event_at` | Most recent event timestamp |
-| `conversion_rate` | Purchases divided by clicks |
+## Processing modes
+
+### Local processing
+
+The local execution path uses:
+
+```text
+CSV
+ ↓
+Pandas
+ ↓
+Bronze Parquet
+ ↓
+Validation / Quarantine
+ ↓
+Silver Parquet
+ ↓
+Gold Parquet
+```
+
+This mode is designed for development, testing, API integration, and lightweight execution.
+
+### Databricks processing
+
+The distributed implementation uses:
+
+```text
+CSV
+ ↓
+PySpark
+ ↓
+Bronze Delta
+ ↓
+Validation
+ ├── Quarantine Delta
+ ↓
+Silver Delta
+ ↓
+Gold Delta
+ ├── Daily Metrics
+ ├── Product Metrics
+ └── Customer Features
+```
+
+The Databricks notebook was implemented and tested using Databricks, PySpark, and Delta Lake.
+
+This demonstrates how the same logical pipeline can move from local dataframe processing to a distributed execution environment.
+
+---
+
+## Data quality
+
+Validation occurs between the Bronze and Silver layers.
+
+DataForge checks for issues including:
+
+- missing timestamps;
+- invalid timestamps;
+- missing user identifiers;
+- missing product identifiers;
+- unsupported event types;
+- invalid prices;
+- duplicate ecommerce events;
+- configurable null thresholds.
+
+Invalid records are separated from trusted records instead of being silently discarded.
+
+```text
+Bronze
+   │
+   ▼
+Validation
+   │
+   ├──────────────→ Quarantine
+   │                 invalid records
+   │
+   ▼
+Valid Records
+   │
+   ▼
+Silver
+```
+
+This makes failures inspectable and allows rejected data to be analysed independently.
+
+---
+
+## Gold datasets
+
+DataForge generates multiple analytics-ready Gold datasets rather than a single aggregate table.
+
+### Daily metrics
+
+Daily ecommerce behaviour including:
+
+- views;
+- cart events;
+- purchases;
+- revenue;
+- active users;
+- conversion rate;
+- average order value.
+
+### Product metrics
+
+Product-level performance including:
+
+- product ID;
+- brand;
+- category;
+- views;
+- cart events;
+- purchases;
+- revenue;
+- unique users;
+- conversion rate.
+
+### Customer features
+
+Customer-level behavioural features including:
+
+- sessions;
+- views;
+- cart events;
+- purchases;
+- total spend;
+- average order value;
+- latest activity.
+
+These outputs can support analytics dashboards as well as downstream machine-learning workflows.
+
+---
+
+## FastAPI backend
+
+DataForge includes a FastAPI service for interacting with datasets and executing pipeline operations.
+
+The API supports workflows such as:
+
+```text
+Upload Dataset
+      ↓
+Profile Dataset
+      ↓
+Validate Dataset
+      ↓
+Run Pipeline
+      ↓
+Explore Outputs
+```
+
+Example endpoints include:
+
+```text
+POST /api/datasets/upload
+
+GET  /api/datasets/{dataset_id}/profile
+
+POST /api/datasets/{dataset_id}/validate
+
+POST /api/datasets/{dataset_id}/run
+```
+
+The API allows the frontend to interact with the data-engineering pipeline instead of functioning only as a static dashboard.
+
+---
+
+## Dashboard
+
+The frontend is built with **React, TypeScript and Vite**.
+
+DataForge provides interfaces for:
+
+```text
+Overview
+│
+├── DATA
+│   ├── Datasets
+│   ├── Data Explorer
+│   └── Quarantine
+│
+├── PIPELINES
+│   ├── Pipeline
+│   ├── Pipeline Runs
+│   ├── Data Lineage
+│   └── Data Quality
+│
+├── INSIGHTS
+│   ├── Analytics
+│   └── ML Readiness
+│
+└── PLATFORM
+    └── Architecture
+```
+
+The dashboard visualises pipeline outputs, quality information, processed datasets, execution history, lineage and analytics generated from the underlying ecommerce data.
+
+---
 
 ## Repository structure
 
 ```text
 .
-├── configs/pipeline.yml
+├── configs/
+│   └── pipeline.yml
+│
 ├── data/
 │   ├── raw/
 │   ├── bronze/
 │   ├── silver/
-│   └── gold/
-├── docs/architecture.md
-├── scripts/generate_sample_data.py
-├── src/ai_data_platform/
-│   ├── ingestion/
-│   ├── transformation/
-│   ├── validation/
-│   ├── monitoring/
-│   └── loaders/
+│   ├── gold/
+│   └── quarantine/
+│
+├── frontend/
+│   ├── public/
+│   │   └── demo-data/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       └── types/
+│
+├── scripts/
+│   └── export_dashboard_data.py
+│
+├── src/
+│   └── ai_data_platform/
+│       ├── api/
+│       ├── ingestion/
+│       ├── transformation/
+│       ├── validation/
+│       ├── monitoring/
+│       └── loaders/
+│
 ├── tests/
+│
 ├── databricks_notebook.py
 ├── Dockerfile
-└── docker-compose.yml
+├── docker-compose.yml
+├── pyproject.toml
+└── README.md
 ```
 
+---
+
 ## Run locally
+
+### 1. Create the environment
 
 ```bash
 python -m venv .venv
@@ -94,114 +368,325 @@ Windows:
 .venv\Scripts\activate
 ```
 
+Git Bash:
+
+```bash
+source .venv/Scripts/activate
+```
+
 macOS/Linux:
 
 ```bash
 source .venv/bin/activate
 ```
 
-Install and run:
+### 2. Install dependencies
 
 ```bash
 pip install -e ".[dev]"
-python scripts/generate_sample_data.py --rows 5000
+```
+
+### 3. Configure the dataset
+
+The local configuration is stored in:
+
+```text
+configs/pipeline.yml
+```
+
+For example:
+
+```yaml
+paths:
+  raw: data/raw/ecommerce/sample-100k.csv
+```
+
+### 4. Run the pipeline
+
+```bash
 ai-data-pipeline --config configs/pipeline.yml
 ```
 
-Expected output:
+A successful ecommerce run produces Bronze, Silver and Gold datasets together with quarantine records and pipeline metrics.
+
+Example:
 
 ```json
 {
-  "run_id": "aip-...",
-  "bronze_rows": 5000,
-  "silver_rows": 5000,
-  "gold_rows": 1000,
-  "rejected_rows": 0
+  "run_id": "aip-bbd3d24d53",
+  "bronze_rows": 100000,
+  "silver_rows": 99983,
+  "daily_rows": 1,
+  "product_rows": 20621,
+  "customer_rows": 20384,
+  "rejected_rows": 17
 }
 ```
 
-## Run with Docker
+---
+
+## Run the API
+
+Start the FastAPI development server:
+
+```bash
+uvicorn ai_data_platform.api.app:app --reload
+```
+
+The API can then be accessed locally at:
+
+```text
+http://localhost:8000
+```
+
+Interactive API documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Run the frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+For a production build:
+
+```bash
+npm run build
+```
+
+---
+
+## Generate dashboard data
+
+Pipeline outputs can be converted into lightweight JSON assets for the portfolio dashboard:
+
+```bash
+python scripts/export_dashboard_data.py --dataset ecommerce
+```
+
+Generated assets are consumed by the React frontend from:
+
+```text
+frontend/public/demo-data/
+```
+
+This allows the deployed portfolio demo to display representative pipeline results without shipping multi-gigabyte raw datasets.
+
+---
+
+## Databricks + PySpark + Delta Lake
+
+`databricks_notebook.py` contains the distributed implementation of the DataForge ecommerce pipeline.
+
+The notebook implements:
+
+- Spark CSV ingestion;
+- Bronze Delta tables;
+- Spark-based validation;
+- quarantine handling;
+- Silver transformations;
+- Gold daily metrics;
+- Gold product metrics;
+- Gold customer features;
+- Delta Lake persistence.
+
+The implementation mirrors the local pipeline while replacing Pandas and Parquet processing with PySpark and Delta Lake.
+
+This provides a practical example of moving the same data architecture from local execution to distributed processing.
+
+---
+
+## Docker
+
+The local environment can also be built using Docker:
 
 ```bash
 docker compose up --build
 ```
 
-## Test and lint
+---
+
+## Testing
+
+Run the automated test suite with:
 
 ```bash
 pytest --cov=ai_data_platform
+```
+
+Lint the project with:
+
+```bash
 ruff check src tests scripts
 ```
 
-## Snowflake integration
+---
 
-Install the optional connector:
+## Observability
 
-```bash
-pip install -e ".[snowflake]"
+Pipeline execution records operational information including:
+
+- run identifiers;
+- pipeline stages;
+- input row counts;
+- output row counts;
+- rejected rows;
+- execution duration;
+- validation warnings;
+- pipeline completion status.
+
+Example:
+
+```text
+pipeline_started
+      ↓
+ingestion
+      ↓
+validation
+      ↓
+silver_transform
+      ↓
+gold_daily
+      ↓
+gold_products
+      ↓
+gold_customers
+      ↓
+pipeline_completed
 ```
 
-Copy `.env.example` to `.env`, provide Snowflake credentials, and set `snowflake.enabled: true` in `configs/pipeline.yml`.
+This makes individual pipeline executions traceable and easier to debug.
 
-Credentials are read only from environment variables and are never committed.
+---
 
-## Databricks and Azure deployment path
+## Optional Snowflake connector
 
-The included `databricks_notebook.py` contains a Spark/Delta implementation suitable for adaptation into a Databricks Job. In a production Azure deployment:
+The project contains an optional Snowflake loading interface for publishing Gold-layer outputs.
 
-- land raw files in Azure Data Lake Storage Gen2;
-- use Auto Loader or Azure Data Factory for incremental ingestion;
-- store Bronze, Silver and Gold tables in Delta Lake;
-- schedule the notebook through Databricks Workflows;
-- forward logs and alerts to Azure Monitor;
-- publish Gold features to Snowflake or a feature store.
+Snowflake is **disabled by default** and is not required to run DataForge.
+
+```yaml
+snowflake:
+  enabled: false
+```
+
+The portfolio implementation does not depend on a live Snowflake deployment.
+
+---
+
+## Cloud architecture
+
+The current project implements distributed processing with Databricks, PySpark and Delta Lake.
+
+A larger production deployment could extend the architecture with services such as:
+
+- Azure Data Lake Storage Gen2 for durable data storage;
+- Azure Data Factory or Databricks Auto Loader for incremental ingestion;
+- Databricks Workflows for orchestration;
+- Unity Catalog for governance;
+- Azure Monitor for operational monitoring;
+- Snowflake or a feature store for downstream serving.
+
+These are architectural extension paths rather than dependencies of the current implementation.
+
+---
 
 ## Reliability features
 
-- Configuration validation with Pydantic
-- Duplicate primary-key detection
-- Timestamp and accepted-domain checks
-- Configurable null-rate thresholds
-- Quarantine storage for rejected records
-- Structured JSON logs containing run IDs
-- Per-stage row counts, durations and rejection metrics
-- Automated tests and GitHub Actions CI
-- Secret-free Snowflake configuration
+- Bronze → Silver → Gold medallion architecture
+- Local and distributed processing paths
+- Data validation before trusted transformations
+- Quarantine handling for invalid records
+- Duplicate-event detection
+- Timestamp validation
+- Event-domain validation
+- Structured pipeline logging
+- Run-level identifiers
+- Stage-level row counts
+- Execution-duration metrics
+- Parquet-based local persistence
+- Delta Lake distributed persistence
+- API-driven dataset workflows
+- Automated testing
+- Raw-data exclusion from source control
+
+---
 
 ## Key engineering decisions
 
-**Why medallion architecture?** It separates source fidelity, cleaning and business logic, making failures easier to isolate and datasets easier to replay.
+**Why Bronze, Silver and Gold?**
 
-**Why quarantine records?** Invalid data should remain inspectable instead of disappearing silently. Each rejected dataset is tied to a pipeline run ID.
+Separating source fidelity, trusted data and business aggregates makes pipeline failures easier to isolate and transformations easier to reproduce.
 
-**Why include both pandas and Spark?** Pandas keeps the project easy to run locally, while the Spark notebook demonstrates the distributed execution path expected in Databricks.
+**Why quarantine invalid records?**
+
+Bad data should remain inspectable. Separating rejected records allows quality problems to be investigated without contaminating trusted datasets.
+
+**Why Pandas and PySpark?**
+
+Pandas provides a lightweight local development path. PySpark demonstrates how the same transformations can execute using distributed processing in Databricks.
+
+**Why Parquet and Delta Lake?**
+
+Parquet provides efficient local analytical storage, while Delta Lake adds table semantics suitable for the distributed Databricks execution path.
+
+**Why expose the pipeline through an API?**
+
+The API turns the pipeline into an application capability rather than a collection of standalone scripts. Datasets can be uploaded, profiled, validated and processed through a consistent interface.
+
+---
 
 ## Challenges addressed
 
-- Maintaining data quality across ingestion and transformation stages
-- Making failures observable through logs, metrics and run identifiers
-- Preserving invalid records for debugging and replay
-- Designing transformations that can move from local execution to distributed processing
-- Keeping cloud credentials outside source control
+- Processing real-world ecommerce event data
+- Handling duplicate and invalid records
+- Maintaining clear boundaries between raw, trusted and analytical datasets
+- Preserving rejected records for investigation
+- Generating multiple analytics-ready Gold datasets
+- Making pipeline execution observable
+- Supporting both local and distributed execution
+- Connecting data-engineering workflows to a web application
+- Keeping large raw datasets out of Git
+
+---
 
 ## Lessons learned
 
-- Reliable AI begins with reliable data contracts.
-- Validation belongs at every system boundary, not only at the final table.
-- Row counts, timing metrics and rejected-record samples make pipeline failures diagnosable.
-- A scalable design is not only about compute; it also requires traceability, replayability and operational ownership.
+- Reliable analytics and AI systems depend on reliable upstream data.
+- Validation is more useful when failed records remain inspectable.
+- Medallion architecture provides clear boundaries for debugging and replay.
+- Distributed processing changes execution mechanics without requiring the underlying data contracts to change.
+- Operational metadata such as row counts, durations and run IDs is part of the data product, not an afterthought.
+- Portfolio-scale applications can demonstrate production architecture without requiring production-scale infrastructure.
+
+---
 
 ## Future improvements
 
-- Incremental ingestion and watermarking
-- Great Expectations or Soda data-quality suites
-- OpenLineage-compatible lineage events
-- Prometheus/Grafana dashboards
-- Azure Data Factory orchestration
-- Databricks Unity Catalog governance
-- Slowly changing dimensions and schema evolution
-- Feature-store publication and model-training triggers
+- Incremental and streaming ingestion
+- Watermarking and checkpointing
+- Schema evolution
+- Great Expectations or Soda quality suites
+- OpenLineage-compatible events
+- Databricks Workflows orchestration
+- Unity Catalog governance
+- Slowly changing dimensions
+- Feature-store integration
+- Model-training triggers
+- Production cloud object storage
+- Pipeline alerting and monitoring
+
+---
 
 ## Portfolio summary
 
-**Data Infrastructure for AI Systems** is a data-engineering project exploring ingestion, transformation, validation and monitoring for scalable analytics and machine-learning systems. It demonstrates ETL design, distributed-processing patterns, cloud architecture, data-quality enforcement and observable pipeline operations.
+**DataForge** is a full-stack data engineering platform demonstrating how raw event data can be transformed into reliable analytics and machine-learning datasets.
+
+It combines **Python, Pandas, FastAPI, React, TypeScript, PySpark, Databricks and Delta Lake** across local and distributed processing paths, with data-quality enforcement, quarantine handling, medallion architecture, observability, API-driven dataset operations and an interactive dashboard.
